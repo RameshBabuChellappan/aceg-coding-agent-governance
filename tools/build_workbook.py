@@ -117,6 +117,7 @@ def main():
         ("5. covered: 1 if at least one breached control would plausibly have prevented the weakness; 0 if the framework has no control for it.", False),
         ("6. n_domains, n_applicable, n_breached, gcs and check are calculated automatically. Fix any message in 'check' before moving on.", False),
         ("7. Code independently. Do not look at the other coder's sheet until the batch is finished.", False),
+        ("8. Stay blind to severity: do not look up the CVSS score or severity, and ignore any severity wording in the text when judging controls.", False),
         ("", False),
         ("Schedule", True),
         ("Week 2: both coders code the 20 'W2 pilot' rows; run python src/05_pilot_kappa.py; revise codebook wording where κ < .60.", False),
@@ -167,21 +168,22 @@ def main():
 
     # ---------------- Cases (source data, read-only) ----------------
     cs = wb.create_sheet("Cases")
-    ccols = ["case_id", "batch", "product", "component_type", "published", "cvss_severity", "cvss_score",
-             "high_impact", "user_interaction_required", "title", "description", "url"]
+    # Blinding: severity, score, vector, high_impact and user_interaction are NOT shown to coders,
+    # because they define the RQ3 outcome and the RQ2 grouping variable.
+    ccols = ["case_id", "batch", "product", "component_type", "published", "title", "description", "url"]
     cs.append(ccols)
     for _, r in d.iterrows():
         cs.append([None if (isinstance(r[k], float) and np.isnan(r[k])) else r[k] for k in ccols])
     style_header(cs, len(ccols))
-    widths = [9, 9, 16, 13, 11, 10, 8, 8, 10, 40, 90, 40]
+    widths = [9, 9, 16, 13, 11, 40, 90, 40]
     for j, w in enumerate(widths, 1):
         cs.column_dimensions[L(j)].width = w
     for row in cs.iter_rows(min_row=2):
         for cell in row:
             cell.font = Font(name=FONT, size=9)
-            cell.alignment = Alignment(vertical="top", wrap_text=cell.column in (10, 11))
-        row[11].hyperlink = row[11].value
-        row[11].font = Font(name=FONT, size=9, color="1F4E99", underline="single")
+            cell.alignment = Alignment(vertical="top", wrap_text=cell.column in (6, 7))
+        row[7].hyperlink = row[7].value
+        row[7].font = Font(name=FONT, size=9, color="1F4E99", underline="single")
     cs.freeze_panes = "B2"
 
     # ---------------- Coder sheets ----------------
@@ -202,7 +204,7 @@ def main():
             w.cell(row=i, column=COL_ID, value=f"=Cases!A{i}")
             w.cell(row=i, column=COL_BATCH, value=f"=Cases!B{i}")
             w.cell(row=i, column=COL_PROD, value=f"=Cases!C{i}")
-            w.cell(row=i, column=COL_TITLE, value=f'=IF(Cases!J{i}="",LEFT(Cases!K{i},120),Cases!J{i})')
+            w.cell(row=i, column=COL_TITLE, value=f'=IF(Cases!F{i}="",LEFT(Cases!G{i},120),Cases!F{i})')
             dl = [f"{L(COL_D + k)}{i}" for k in range(8)]
             w.cell(row=i, column=COL_NDOM, value=f"=IF(COUNT({dl[0]}:{dl[-1]})=0,\"\",SUM({dl[0]}:{dl[-1]}))")
             napp = "+".join(f"N({dl[k]})*{len(DOMAINS[k][3])}" for k in range(8))
