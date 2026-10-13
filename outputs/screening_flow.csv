@@ -1,0 +1,6 @@
+stage,n
+"Records identified (GHSA + CVE list, 2023 to freeze)",239
+Excluded: not an AI coding agent or a component it runs,14
+Excluded: autocomplete-only or no agent capability,1
+Excluded: insufficient detail to code,1
+Included (analysis dataset),223

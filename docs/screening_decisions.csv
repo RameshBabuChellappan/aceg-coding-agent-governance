@@ -1,0 +1,17 @@
+record_id,decision,reason,title
+CVE-2024-28120,exclude,E2 autocomplete-only browser plugin; no agent actions,API key leak in codeium-chrome
+CVE-2024-55494,exclude,E1 unrelated product (Opencode Mobile Collect Call),A cross-site scripting (XSS) vulnerability in Opencode Mobile Collect Call v5.4.7 allows a
+CVE-2025-23709,exclude,E1 unrelated product (WordPress plugin by Kiro G.),Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulne
+CVE-2025-21264,exclude,E3 Visual Studio Code advisory does not describe an AI agent,Visual Studio Code Security Feature Bypass Vulnerability
+CVE-2025-54424,exclude,"E1 server-management panel, not a coding agent",1Panel Agent Bypasses Certificate Verification Leading to Arbitrary Command Execution
+CVE-2025-58401,exclude,"E1 note-taking writing assistant, not a coding agent",Obsidian GitHub Copilot Plugin versions prior to 1.1.7 store Github API token in cleartext
+CVE-2026-42571,exclude,E1 vulnerability found by an agent; agent not affected,Pelican Web UI Affected by a Privilege Escalation Attack
+CVE-2026-44220,exclude,E1 CI scanner; agent not affected,ciguard: discover_pipeline_files follows symlinks out of scan root
+CVE-2026-33111,exclude,"E1 browser assistant (Copilot in Edge), not a coding agent",Improper neutralization of special elements used in a command ('command injection') in Cop
+CVE-2026-47644,exclude,"E1 browser assistant (Copilot in Edge), not a coding agent",Improper neutralization of special elements in output used by a downstream component ('inj
+CVE-2026-48561,exclude,"E1 browser assistant (Copilot in Edge), not a coding agent",Microsoft Edge Copilot Remote Code Execution Vulnerability
+CVE-2026-58616,exclude,"E1 browser assistant (Copilot in Edge), not a coding agent",Concurrent execution using shared resource with improper synchronization ('race condition'
+CVE-2026-73251,exclude,E1 unrelated product (Mongoose web server),Mongoose Built-in TLS: CA-bundle certificate chain accepted without any signature verifica
+CVE-2026-71493,exclude,"E1 cloud cost tool, not an agent component",Infracost: Arbitrary file read via config-template readFile symlink traversal
+CVE-2026-71494,exclude,"E1 cloud cost tool, not an agent component",Infracost: Terraform Cloud and registry token disclosure via unvalidated hostname
+CVE-2026-107286,exclude,E1 advisory posted by an agent about an unrelated library,Pydantic AI: Concurrency-limited models can keep their slot when a streamed request ends e

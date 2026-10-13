@@ -1,0 +1,35 @@
+variable,type,meaning,units_or_values,relevance
+case_id,Identifier,Unique case code,CA-001 to CA-223,Record key
+source,Nominal,Database where the record was found,GHSA; CVE list; both,Provenance
+ghsa_id,Identifier,GitHub advisory identifier,Text,Traceability
+cve_id,Identifier,CVE identifier,Text,Traceability; merge key
+url,Text,Link to the public record,URL,Verification
+published,Date,Publication date,YYYY-MM-DD,Source of year
+year,Discrete,Publication year,2023 to 2026,RQ3 covariate (year_2026)
+product,Nominal,Coding agent concerned,20 categories,Descriptive; RQ3 clusters
+component_type,Binary,Agent product or ecosystem component,agent product = 0; ecosystem = 1,RQ3 covariate
+cvss_severity,Ordinal,Published CVSS severity,"Low, Medium, High, Critical",Source of high_impact
+cvss_score,Continuous,Published CVSS base score,0.0 to 10.0 points,Sensitivity analysis
+cvss_vector,Text,CVSS vector string,Text,Source of user interaction and version
+cvss_version,Binary,CVSS version of the rating,0 = 3.x; 1 = 4.0,RQ3 sensitivity
+high_impact,Binary,Severity High or Critical (base score >= 7.0),0 / 1,RQ3 dependent variable
+user_interaction_required,Binary,Exploitation needs a human action (CVSS UI),0 / 1,RQ2 independent variable
+cwe_ids,Text,Weakness types (CWE),Text,Descriptive
+d1 to d8,Binary,Governance domains present,0 / 1,RQ1; RQ4
+n_domains,Count,Number of domains present,0 to 8,RQ3 covariate
+primary_domain,Nominal,Domain that most directly enabled the weakness,1 to 8,RQ4 label
+domain_family,Nominal,Family of the primary domain,A to D,RQ2 dependent variable
+c01 to c20,Categorical,Status of each control,1 = breached; 0 = not breached; NA = not applicable,GCS input; RQ3 features
+n_applicable,Count,Controls linked to the domains present,0 to 20,GCS denominator
+n_breached,Count,Applicable controls breached,0 to 20,GCS input
+gcs,Continuous,Governance Compliance Score,0 to 100 percent,RQ3 independent variable
+gcs_z,Continuous,Standardized GCS (computed in analysis),Standard deviations,RQ3 model
+covered,Binary,Framework covers the case,0 / 1,RQ1 dependent variable
+coder1_primary_domain,Nominal,Primary domain from Coder 1,1 to 8,Reliability
+coder2_primary_domain,Nominal,Primary domain from Coder 2,1 to 8,Reliability
+gold_primary_domain,Nominal,Adjudicated primary domain,1 to 8,RQ4 reference
+llm_d1 to llm_d8,Binary,Domains predicted by the pipeline,0 / 1,RQ4
+llm_primary_domain,Nominal,Primary domain predicted by the pipeline,1 to 8,RQ4
+llm_c01 to llm_c20,Categorical,Control status predicted by the pipeline,1; 0; NA,RQ4 (GCS agreement)
+llm_gcs,Continuous,GCS from pipeline codes,0 to 100 percent,RQ4
+llm_model,Text,Model name and version,Text,Reproducibility
