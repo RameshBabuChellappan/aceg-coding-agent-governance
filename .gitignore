@@ -1,7 +1,7 @@
 .env
-   *.key
-   __pycache__/
-   *.pyc
-   .venv/
-   data/raw/
-   ~$*
+*.key
+__pycache__/
+*.pyc
+.venv/
+data/raw/
+~$*
