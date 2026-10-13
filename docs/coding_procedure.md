@@ -20,9 +20,10 @@ Enter the names on the **Tracker** sheet.
 
 1. **Code independently.** Do not open the other coder's sheet until the batch is finished, and do not discuss individual cases while coding.
 2. **Use only the advisory text and its link** on the **Cases** sheet. Do not use outside knowledge of the product.
-3. **Do not use any AI tool to code.** The human labels are the reference standard that the Claude pipeline is tested against in RQ4. AI-assisted human codes would make that test circular.
-4. **Fix every message in the `check` column** before moving on. A row counts as done only when `done` = 1.
-5. **Work on a shared copy.** Keep the workbook in a shared folder (OneDrive or Google Drive, opened in Excel) and keep a dated backup each week.
+3. **Stay blind to severity.** The Cases sheet deliberately omits the CVSS severity, score, vector, `high_impact` and user-interaction fields, because they define the RQ3 outcome and the RQ2 grouping variable. Do not look them up on the advisory page, and ignore any severity wording in the text when judging whether a control was breached. The LLM pipeline is blinded in the same way (`src/03_llm_code.py` sends only title, product, date, link and description).
+4. **Do not use any AI tool to code.** The human labels are the reference standard that the Claude pipeline is tested against in RQ4. AI-assisted human codes would make that test circular.
+5. **Fix every message in the `check` column** before moving on. A row counts as done only when `done` = 1.
+6. **Work on a shared copy.** Keep the workbook in a shared folder (OneDrive or Google Drive, opened in Excel) and keep a dated backup each week.
 
 ## Week 2 — pilot (20 cases)
 

@@ -93,6 +93,8 @@ Controls linked only to absent domains are coded `NA`.
 - `high_impact` = 1 if `cvss_severity` is HIGH or CRITICAL (CVSS ≥ 7.0); otherwise 0. This is the RQ3 outcome.
 - `user_interaction_required`: from the CVSS vector (`UI:N` = 0; `UI:R`, `UI:P` or `UI:A` = 1). This is the RQ2 grouping variable.
 - `component_type`: agent product or ecosystem component, assigned at screening.
+
+These CVSS-derived fields are **hidden from coders and from the LLM pipeline** (blinding), so control judgments cannot be influenced by the outcome. They are merged back only by `src/06_build_coded_dataset.py`. The CVSS figures in the worked example below are shown for illustration only; coders do not see them for real cases.
 - `cwe_ids`, `published`, `year`, `product`.
 
 ## 6. Procedure
