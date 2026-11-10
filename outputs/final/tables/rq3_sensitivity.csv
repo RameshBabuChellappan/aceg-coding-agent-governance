@@ -1,0 +1,8 @@
+Specification,n,OR,lo,hi,p,McFadden
+"A. Final labels, GCS (Model 2)",223,1.3408,0.9916,1.813,0.0568,0.117
+"B. As A, product-clustered SE",223,1.3408,0.9899,1.816,0.0582,0.117
+"C. As A, plus CVSS 4.0 covariate",223,1.3378,0.9853,1.8164,0.0622,0.1258
+D. Coder 1 labels,223,1.1137,0.8293,1.4957,0.4741,0.0586
+E. Coder 2 labels,223,0.7236,0.5275,0.9927,0.0449,0.0458
+F. LLM labels,223,1.1099,0.8324,1.48,0.4773,0.0541
+G. Breached-control count (per SD) instead of GCS,223,1.1208,0.4959,2.5333,0.784,0.1032

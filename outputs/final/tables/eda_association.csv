@@ -1,0 +1,6 @@
+Characteristic,Levels,chi2,df,p,cramers_v,min_expected,n
+CWE group,8,40.6737,7,0.0,0.4271,1.2018,223
+Ecosystem component,2,1.0631,1,0.3025,0.069,14.1211,223
+Published in 2026,2,0.5947,1,0.4406,0.0516,20.4305,223
+User interaction required,2,1.2572,1,0.2622,0.0754,28.2353,221
+CVSS version 4.0,2,5.8565,1,0.0155,0.1621,19.5291,223

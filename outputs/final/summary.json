@@ -1,0 +1,731 @@
+{
+  "cleaning": {
+    "cvss_missing": 31,
+    "recovered": 24,
+    "recovered_band_match": 24,
+    "left_missing": 7,
+    "v3_with_score": 132,
+    "score_vector_mismatch": 43,
+    "band_flip": 19,
+    "outcome_flip": 6
+  },
+  "eda": {
+    "n": 223,
+    "high_impact": 156,
+    "hi_rate": 0.6995515695067265,
+    "years": {
+      "2026": 155,
+      "2025": 66,
+      "2023": 1,
+      "2024": 1
+    },
+    "products": 20,
+    "ecosystem": 47,
+    "first": "2023-10-31",
+    "last": "2026-10-10",
+    "severity": {
+      "HIGH": 126,
+      "MEDIUM": 49,
+      "CRITICAL": 30,
+      "LOW": 18
+    },
+    "cvss_median": 7.8,
+    "cvss_missing": 7
+  },
+  "rq1": {
+    "covered": 222,
+    "n": 223,
+    "p": 0.9955156950672646,
+    "lo": 0.9750407447762085,
+    "hi": 0.9992079710004224,
+    "binom_p": 1.3900581393990376e-20,
+    "uncovered": [
+      "CA-121"
+    ],
+    "coverage_by_source": {
+      "coder1": [
+        223,
+        100.0
+      ],
+      "coder2": [
+        185,
+        82.95964125560538
+      ],
+      "llm": [
+        221,
+        99.10313901345292
+      ],
+      "gold": [
+        222,
+        99.55156950672645
+      ]
+    },
+    "mean_domains": {
+      "coder1": 2.8251121076233185,
+      "coder2": 2.4394618834080717,
+      "llm": 2.506726457399103,
+      "gold": 2.2242152466367715
+    }
+  },
+  "rq2": {
+    "n": 221,
+    "chi2": 1.422362552948843,
+    "df": 3,
+    "p": 0.7003012984303767,
+    "V": 0.08022486928223835,
+    "mc_p": 0.8272172782721727,
+    "min_expected": 0.4343891402714932,
+    "n_exp_lt5": 2,
+    "merged_chi2": 0.6774376692456475,
+    "merged_df": 2,
+    "merged_p": 0.7126828026506438,
+    "power_w25": 0.891720793655948,
+    "table": {
+      "No interaction (UI:N)": {
+        "A": 40,
+        "B": 47,
+        "C": 9,
+        "D": 0
+      },
+      "Interaction required": {
+        "A": 53,
+        "B": 63,
+        "C": 8,
+        "D": 1
+      }
+    },
+    "by_source": [
+      {
+        "labels": "coder1",
+        "chi2": 2.8869318507281543,
+        "df": 3,
+        "p": 0.40938858093972263,
+        "V": 0.1142936570792259
+      },
+      {
+        "labels": "coder2",
+        "chi2": 0.9042237854737851,
+        "df": 2,
+        "p": 0.6362829702988271,
+        "V": 0.06396491492615572
+      },
+      {
+        "labels": "llm",
+        "chi2": 5.7471347407172555,
+        "df": 3,
+        "p": 0.12458212555936787,
+        "V": 0.16126107581614743
+      }
+    ]
+  },
+  "rq3": {
+    "n": 223,
+    "lr": 31.883858026707742,
+    "lr_df": 4,
+    "lr_p": 2.0205567669354647e-06,
+    "mcfadden": 0.11695574422407351,
+    "hl": [
+      6.219514280892292,
+      8,
+      0.6226578536787944
+    ],
+    "box_tidwell_p": 0.40004896953414626,
+    "vif": [
+      1.0655968064423327,
+      1.1224611456437201,
+      1.0147702114164596,
+      1.0833032027974392
+    ],
+    "events_low": 67,
+    "gcs_mean_hi": 54.47390038736194,
+    "gcs_mean_lo": 48.87526652452025,
+    "gcs_median_hi": 58.57142857142857,
+    "gcs_median_lo": 50.0,
+    "gcs_sd": 13.70983854135464,
+    "mw_u": 6359.0,
+    "mw_p": 0.008724235654951703,
+    "sensitivity": [
+      {
+        "Specification": "A. Final labels, GCS (Model 2)",
+        "n": 223,
+        "OR": 1.3408,
+        "lo": 0.9916,
+        "hi": 1.813,
+        "p": 0.0568,
+        "McFadden": 0.117
+      },
+      {
+        "Specification": "B. As A, product-clustered SE",
+        "n": 223,
+        "OR": 1.3408,
+        "lo": 0.9899,
+        "hi": 1.816,
+        "p": 0.0582,
+        "McFadden": 0.117
+      },
+      {
+        "Specification": "C. As A, plus CVSS 4.0 covariate",
+        "n": 223,
+        "OR": 1.3378,
+        "lo": 0.9853,
+        "hi": 1.8164,
+        "p": 0.0622,
+        "McFadden": 0.1258
+      },
+      {
+        "Specification": "D. Coder 1 labels",
+        "n": 223,
+        "OR": 1.1137,
+        "lo": 0.8293,
+        "hi": 1.4957,
+        "p": 0.4741,
+        "McFadden": 0.0586
+      },
+      {
+        "Specification": "E. Coder 2 labels",
+        "n": 223,
+        "OR": 0.7236,
+        "lo": 0.5275,
+        "hi": 0.9927,
+        "p": 0.0449,
+        "McFadden": 0.0458
+      },
+      {
+        "Specification": "F. LLM labels",
+        "n": 223,
+        "OR": 1.1099,
+        "lo": 0.8324,
+        "hi": 1.48,
+        "p": 0.4773,
+        "McFadden": 0.0541
+      },
+      {
+        "Specification": "G. Breached-control count (per SD) instead of GCS",
+        "n": 223,
+        "OR": 1.1208,
+        "lo": 0.4959,
+        "hi": 2.5333,
+        "p": 0.784,
+        "McFadden": 0.1032
+      }
+    ]
+  },
+  "split": {
+    "train": 167,
+    "test": 56,
+    "train_hi": 117,
+    "test_hi": 39
+  },
+  "best_params": {
+    "M4": {
+      "max_depth": "None",
+      "max_features": "sqrt",
+      "min_samples_leaf": "5"
+    },
+    "M5": {
+      "learning_rate": "0.03",
+      "max_depth": "3",
+      "max_iter": "100",
+      "min_samples_leaf": "10"
+    },
+    "M6": {
+      "mlpclassifier__alpha": "0.001",
+      "mlpclassifier__hidden_layer_sizes": "(32, 16)"
+    },
+    "M7": {
+      "max_depth": "5",
+      "max_features": "sqrt",
+      "min_samples_leaf": "3"
+    }
+  },
+  "best_model": "M7",
+  "perf": [
+    {
+      "Model": "M0 Majority-class baseline",
+      "key": "M0",
+      "Features": "None (class prior)",
+      "train_auc": 0.5,
+      "train_acc": 0.7006,
+      "train_bal_acc": 0.5,
+      "train_f1": 0.8239,
+      "cv_auc": 0.5,
+      "cv_auc_sd": 0.0,
+      "test_auc": 0.5,
+      "test_auc_lo": NaN,
+      "test_auc_hi": NaN,
+      "test_acc": 0.6964,
+      "test_bal_acc": 0.5,
+      "test_prec": 0.6964,
+      "test_rec": 1.0,
+      "test_f1": 0.8211,
+      "test_spec": 0.0,
+      "test_brier": 0.2114,
+      "train_brier": 0.2098
+    },
+    {
+      "Model": "M1 Logistic: covariates only",
+      "key": "M1",
+      "Features": "Component type, number of domains, 2026",
+      "train_auc": 0.7337,
+      "train_acc": 0.7425,
+      "train_bal_acc": 0.6215,
+      "train_f1": 0.834,
+      "cv_auc": 0.712,
+      "cv_auc_sd": 0.0922,
+      "test_auc": 0.6667,
+      "test_auc_lo": 0.4821,
+      "test_auc_hi": 0.8385,
+      "test_acc": 0.7143,
+      "test_bal_acc": 0.5626,
+      "test_prec": 0.7255,
+      "test_rec": 0.9487,
+      "test_f1": 0.8222,
+      "test_spec": 0.1765,
+      "test_brier": 0.1918,
+      "train_brier": 0.1795
+    },
+    {
+      "Model": "M2 Logistic: GCS + covariates",
+      "key": "M2",
+      "Features": "GCS + M1 covariates",
+      "train_auc": 0.7491,
+      "train_acc": 0.7485,
+      "train_bal_acc": 0.6258,
+      "train_f1": 0.8385,
+      "cv_auc": 0.7245,
+      "cv_auc_sd": 0.093,
+      "test_auc": 0.6946,
+      "test_auc_lo": 0.5172,
+      "test_auc_hi": 0.8575,
+      "test_acc": 0.7143,
+      "test_bal_acc": 0.546,
+      "test_prec": 0.717,
+      "test_rec": 0.9744,
+      "test_f1": 0.8261,
+      "test_spec": 0.1176,
+      "test_brier": 0.1884,
+      "train_brier": 0.1757
+    },
+    {
+      "Model": "M3 Logistic: CWE group (current triage)",
+      "key": "M3",
+      "Features": "CWE-group indicators, component type, 2026",
+      "train_auc": 0.7988,
+      "train_acc": 0.7784,
+      "train_bal_acc": 0.6987,
+      "train_f1": 0.8502,
+      "cv_auc": 0.7411,
+      "cv_auc_sd": 0.0786,
+      "test_auc": 0.7021,
+      "test_auc_lo": 0.5391,
+      "test_auc_hi": 0.8546,
+      "test_acc": 0.6786,
+      "test_bal_acc": 0.5535,
+      "test_prec": 0.7234,
+      "test_rec": 0.8718,
+      "test_f1": 0.7907,
+      "test_spec": 0.2353,
+      "test_brier": 0.1973,
+      "train_brier": 0.1609
+    },
+    {
+      "Model": "M4 Random forest: ACEG profile",
+      "key": "M4",
+      "Features": "8 domains, 20 control breaches, GCS, covariates",
+      "train_auc": 0.8931,
+      "train_acc": 0.8084,
+      "train_bal_acc": 0.8232,
+      "train_f1": 0.8519,
+      "cv_auc": 0.8279,
+      "cv_auc_sd": 0.0583,
+      "test_auc": 0.8454,
+      "test_auc_lo": 0.7346,
+      "test_auc_hi": 0.9379,
+      "test_acc": 0.75,
+      "test_bal_acc": 0.7044,
+      "test_prec": 0.8205,
+      "test_rec": 0.8205,
+      "test_f1": 0.8205,
+      "test_spec": 0.5882,
+      "test_brier": 0.1621,
+      "train_brier": 0.1445
+    },
+    {
+      "Model": "M5 Gradient boosting: ACEG profile",
+      "key": "M5",
+      "Features": "As M4",
+      "train_auc": 0.915,
+      "train_acc": 0.8144,
+      "train_bal_acc": 0.8332,
+      "train_f1": 0.8558,
+      "cv_auc": 0.8206,
+      "cv_auc_sd": 0.0675,
+      "test_auc": 0.8401,
+      "test_auc_lo": 0.7081,
+      "test_auc_hi": 0.9472,
+      "test_acc": 0.7321,
+      "test_bal_acc": 0.6916,
+      "test_prec": 0.8158,
+      "test_rec": 0.7949,
+      "test_f1": 0.8052,
+      "test_spec": 0.5882,
+      "test_brier": 0.1476,
+      "train_brier": 0.1246
+    },
+    {
+      "Model": "M6 Neural network (MLP): ACEG profile",
+      "key": "M6",
+      "Features": "As M4 (standardized)",
+      "train_auc": 0.9726,
+      "train_acc": 0.8982,
+      "train_bal_acc": 0.8644,
+      "train_f1": 0.9289,
+      "cv_auc": 0.7838,
+      "cv_auc_sd": 0.0772,
+      "test_auc": 0.8469,
+      "test_auc_lo": 0.6975,
+      "test_auc_hi": 0.9575,
+      "test_acc": 0.7679,
+      "test_bal_acc": 0.6674,
+      "test_prec": 0.7826,
+      "test_rec": 0.9231,
+      "test_f1": 0.8471,
+      "test_spec": 0.4118,
+      "test_brier": 0.1545,
+      "train_brier": 0.0599
+    },
+    {
+      "Model": "M7 Random forest: ACEG + CWE",
+      "key": "M7",
+      "Features": "M4 features + CWE groups",
+      "train_auc": 0.9331,
+      "train_acc": 0.8383,
+      "train_bal_acc": 0.856,
+      "train_f1": 0.8756,
+      "cv_auc": 0.8517,
+      "cv_auc_sd": 0.0578,
+      "test_auc": 0.8386,
+      "test_auc_lo": 0.7264,
+      "test_auc_hi": 0.9357,
+      "test_acc": 0.7321,
+      "test_bal_acc": 0.675,
+      "test_prec": 0.8,
+      "test_rec": 0.8205,
+      "test_f1": 0.8101,
+      "test_spec": 0.5294,
+      "test_brier": 0.1545,
+      "train_brier": 0.123
+    }
+  ],
+  "auc_diff": {
+    "M2": {
+      "mean": 0.14436507727944212,
+      "lo": -0.0010195707070706017,
+      "hi": 0.30243700550395586,
+      "p_le0": 0.0255
+    },
+    "M3": {
+      "mean": 0.13795120679518005,
+      "lo": -0.032199868583797184,
+      "hi": 0.3114798331613346,
+      "p_le0": 0.0575
+    }
+  },
+  "cv_full": [
+    {
+      "Model": "M0 Majority-class baseline",
+      "auc": 0.5,
+      "auc_sd": 0.0,
+      "bal_acc": 0.5,
+      "bal_acc_sd": 0.0
+    },
+    {
+      "Model": "M1 Logistic: covariates only",
+      "auc": 0.7047,
+      "auc_sd": 0.0889,
+      "bal_acc": 0.5812,
+      "bal_acc_sd": 0.0524
+    },
+    {
+      "Model": "M2 Logistic: GCS + covariates",
+      "auc": 0.7123,
+      "auc_sd": 0.0798,
+      "bal_acc": 0.5951,
+      "bal_acc_sd": 0.0643
+    },
+    {
+      "Model": "M3 Logistic: CWE group (current triage)",
+      "auc": 0.7364,
+      "auc_sd": 0.0908,
+      "bal_acc": 0.5813,
+      "bal_acc_sd": 0.0681
+    },
+    {
+      "Model": "M4 Random forest: ACEG profile",
+      "auc": 0.8293,
+      "auc_sd": 0.0567,
+      "bal_acc": 0.7546,
+      "bal_acc_sd": 0.0626
+    },
+    {
+      "Model": "M5 Gradient boosting: ACEG profile",
+      "auc": 0.8102,
+      "auc_sd": 0.0572,
+      "bal_acc": 0.7473,
+      "bal_acc_sd": 0.0668
+    },
+    {
+      "Model": "M6 Neural network (MLP): ACEG profile",
+      "auc": 0.7897,
+      "auc_sd": 0.0649,
+      "bal_acc": 0.6674,
+      "bal_acc_sd": 0.0797
+    },
+    {
+      "Model": "M7 Random forest: ACEG + CWE",
+      "auc": 0.8423,
+      "auc_sd": 0.0587,
+      "bal_acc": 0.7485,
+      "bal_acc_sd": 0.0636
+    }
+  ],
+  "cm_best": [
+    [
+      9,
+      8
+    ],
+    [
+      7,
+      32
+    ]
+  ],
+  "cm_m2": [
+    [
+      2,
+      15
+    ],
+    [
+      1,
+      38
+    ]
+  ],
+  "importance_top": [
+    {
+      "feature": "d1",
+      "mean": 0.0314,
+      "sd": 0.0178
+    },
+    {
+      "feature": "n_domains",
+      "mean": 0.0242,
+      "sd": 0.0208
+    },
+    {
+      "feature": "b01",
+      "mean": 0.0189,
+      "sd": 0.0082
+    },
+    {
+      "feature": "b14",
+      "mean": 0.0141,
+      "sd": 0.0093
+    },
+    {
+      "feature": "b08",
+      "mean": 0.0093,
+      "sd": 0.0082
+    },
+    {
+      "feature": "b11",
+      "mean": 0.009,
+      "sd": 0.0087
+    },
+    {
+      "feature": "d4",
+      "mean": 0.0084,
+      "sd": 0.0083
+    },
+    {
+      "feature": "ecosystem",
+      "mean": 0.0045,
+      "sd": 0.0024
+    },
+    {
+      "feature": "cwe_Information exposure",
+      "mean": 0.0042,
+      "sd": 0.0027
+    },
+    {
+      "feature": "d2",
+      "mean": 0.0042,
+      "sd": 0.0044
+    }
+  ],
+  "rq4": {
+    "pooled_kappa": 0.5786625513016639,
+    "pooled_lo": 0.5264742986492261,
+    "pooled_hi": 0.628640064583785,
+    "p_le_60": 0.805,
+    "pooled_cells": 1214,
+    "pooled_acc": 0.8303130148270181,
+    "pooled_prec": 0.6290322580645161,
+    "pooled_rec": 0.7748344370860927,
+    "pooled_f1": 0.6943620178041542,
+    "pooled_fp": 138,
+    "pooled_fn": 68,
+    "hh_pooled_kappa": 0.27828437106096915,
+    "hh_lo": 0.23179621640688547,
+    "hh_hi": 0.32504032694251295,
+    "c1_llm_pooled": 0.2835472842304967,
+    "c2_llm_pooled": 0.45806584483215157,
+    "fleiss_pooled": 0.3377977070749413,
+    "primary": {
+      "k_C1_C2": 0.2214075514988279,
+      "k_C1_LLM": 0.18232257441983882,
+      "k_C2_LLM": 0.25877351198144805,
+      "po_C1_C2": 0.3721973094170404,
+      "po_C1_LLM": 0.3183856502242152,
+      "po_C2_LLM": 0.42152466367713004,
+      "fleiss": 0.1995469814870603
+    },
+    "unanimous_cases": 3,
+    "pooled_kappa_6dom": 0.5710030465915044,
+    "gcs": {
+      "r_C1_C2": 0.33087610896193137,
+      "r_C1_LLM": 0.08199005163313701,
+      "r_C2_LLM": 0.010195774053964888,
+      "mad_C1_C2": 21.835037782347204,
+      "mad_C1_LLM": 11.327752342326333,
+      "mad_C2_LLM": 19.96545308204501
+    },
+    "control_agreement": [
+      [
+        "c01",
+        43,
+        0.627906976744186
+      ],
+      [
+        "c02",
+        48,
+        0.6458333333333334
+      ],
+      [
+        "c03",
+        23,
+        1.0
+      ],
+      [
+        "c04",
+        14,
+        0.9285714285714286
+      ],
+      [
+        "c05",
+        16,
+        0.9375
+      ],
+      [
+        "c08",
+        72,
+        0.9861111111111112
+      ],
+      [
+        "c09",
+        62,
+        0.7258064516129032
+      ],
+      [
+        "c10",
+        27,
+        0.8148148148148148
+      ],
+      [
+        "c11",
+        32,
+        0.75
+      ],
+      [
+        "c12",
+        17,
+        0.8823529411764706
+      ],
+      [
+        "c13",
+        20,
+        0.95
+      ],
+      [
+        "c14",
+        17,
+        0.9411764705882353
+      ],
+      [
+        "c18",
+        5,
+        1.0
+      ],
+      [
+        "c19",
+        5,
+        0.8
+      ],
+      [
+        "c20",
+        6,
+        1.0
+      ]
+    ],
+    "control_pooled": {
+      "cells": 407,
+      "acc": 0.8255528255528255,
+      "kappa": 0.6516797049215896
+    },
+    "control_hh": {
+      "cells": 747,
+      "acc": 0.7041499330655957,
+      "kappa": 0.4282602296143656
+    }
+  },
+  "deploy_features": [
+    "d1",
+    "d2",
+    "d3",
+    "d4",
+    "d5",
+    "d6",
+    "d7",
+    "d8",
+    "b01",
+    "b02",
+    "b03",
+    "b04",
+    "b05",
+    "b06",
+    "b07",
+    "b08",
+    "b09",
+    "b10",
+    "b11",
+    "b12",
+    "b13",
+    "b14",
+    "b15",
+    "b16",
+    "b17",
+    "b18",
+    "b19",
+    "b20",
+    "gcs",
+    "ecosystem",
+    "n_domains",
+    "year_2026",
+    "cwe_Access control / authentication",
+    "cwe_Code injection",
+    "cwe_Command injection",
+    "cwe_Information exposure",
+    "cwe_Other",
+    "cwe_Path traversal / link following",
+    "cwe_Untrusted configuration / inclusion",
+    "cwe_Untrusted input / prompt injection"
+  ]
+}

@@ -1,0 +1,9 @@
+Model,auc,auc_sd,bal_acc,bal_acc_sd
+M0 Majority-class baseline,0.5,0.0,0.5,0.0
+M1 Logistic: covariates only,0.705,0.089,0.581,0.052
+M2 Logistic: GCS + covariates,0.712,0.08,0.595,0.064
+M3 Logistic: CWE group (current triage),0.736,0.091,0.581,0.068
+M4 Random forest: ACEG profile,0.829,0.057,0.755,0.063
+M5 Gradient boosting: ACEG profile,0.81,0.057,0.747,0.067
+M6 Neural network (MLP): ACEG profile,0.79,0.065,0.667,0.08
+M7 Random forest: ACEG + CWE,0.842,0.059,0.748,0.064

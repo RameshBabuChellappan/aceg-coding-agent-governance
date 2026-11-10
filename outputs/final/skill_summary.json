@@ -1,0 +1,97 @@
+{
+ "portable_C": 0.01,
+ "portable_cv_auc": 0.8362357098546614,
+ "portable_cv_sd": 0.0663501503498933,
+ "eval": [
+  {
+   "Pipeline": "Random forest (M7), hold-out model",
+   "Labels": "Final (majority) labels",
+   "test_auc": 0.8386,
+   "auc_lo": 0.7178,
+   "auc_hi": 0.9375,
+   "bal_acc": 0.675,
+   "f1": 0.8101,
+   "rec": 0.8205,
+   "spec": 0.5294,
+   "brier": 0.1545
+  },
+  {
+   "Pipeline": "Random forest (M7), hold-out model",
+   "Labels": "LLM coder only (fully automated)",
+   "test_auc": 0.8145,
+   "auc_lo": 0.6783,
+   "auc_hi": 0.922,
+   "bal_acc": 0.7134,
+   "f1": 0.8537,
+   "rec": 0.8974,
+   "spec": 0.5294,
+   "brier": 0.1559
+  },
+  {
+   "Pipeline": "Portable logistic, training split",
+   "Labels": "Final (majority) labels",
+   "test_auc": 0.8024,
+   "auc_lo": 0.6695,
+   "auc_hi": 0.9116,
+   "bal_acc": 0.546,
+   "f1": 0.8261,
+   "rec": 0.9744,
+   "spec": 0.1176,
+   "brier": 0.1693
+  },
+  {
+   "Pipeline": "Portable logistic, training split",
+   "Labels": "LLM coder only (fully automated)",
+   "test_auc": 0.81,
+   "auc_lo": 0.6735,
+   "auc_hi": 0.9123,
+   "bal_acc": 0.546,
+   "f1": 0.8261,
+   "rec": 0.9744,
+   "spec": 0.1176,
+   "brier": 0.1765
+  }
+ ],
+ "top_coefficients": [
+  [
+   "b13",
+   -0.8259913796978435
+  ],
+  [
+   "b17",
+   -0.8178796405153075
+  ],
+  [
+   "cwe_Code injection",
+   0.42886197501212525
+  ],
+  [
+   "d1",
+   0.4272399591000408
+  ],
+  [
+   "cwe_Information exposure",
+   -0.42408658403434724
+  ],
+  [
+   "b15",
+   0.37069175169435575
+  ],
+  [
+   "b19",
+   0.3282322399792096
+  ],
+  [
+   "b05",
+   0.2993167965895684
+  ],
+  [
+   "b11",
+   -0.29887314301799867
+  ],
+  [
+   "b01",
+   0.2972029764671471
+  ]
+ ]
+}

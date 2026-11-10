@@ -15,6 +15,33 @@ Each case receives a **Governance Compliance Score (GCS)**: the share of relevan
 | RQ3 | Does a lower GCS predict a high-impact case (CVSS High or Critical)? | Binary logistic regression (odds ratios, AUC, Hosmer–Lemeshow, Box–Tidwell); sensitivity checks (product-clustered SEs, CVSS version, CVSS-score regression); random forest benchmark with permutation importance |
 | RQ4 | How accurately does an automated LLM pipeline apply the framework compared with human gold labels? | Cohen's κ, accuracy, precision, recall, F1 |
 
+## Final results (final report, 10 November 2026)
+
+| RQ | Result |
+|---|---|
+| RQ1 | ACEG covers 222 / 223 cases (99.6%, 95% CI [97.5, 99.9]); binomial p < .001 vs .80. D1 66.8%, D4 51.6% most prevalent |
+| RQ2 | Domain family vs user interaction: χ²(3) = 1.42, p = .700, V = .08 (H0 retained) |
+| RQ3 | GCS OR = 1.34 per SD, p = .057 (H0 not rejected); number of domains OR = 2.28, p < .001. Best predictor: M7 random forest (ACEG + CWE), CV AUC .85, test AUC .84 vs .70 for CWE triage |
+| RQ4 | LLM coder vs human consensus κ = .58 [.53, .63] (H0 κ ≤ .60 not rejected); human–human κ = .28 |
+
+Final pipeline: `src/07_parse_llm_codes.py` → `src/08_build_gold_and_db.py` (majority labels, SQLite `data/aceg.db`) → `src/09_final_analysis.py` (all tables/figures in `outputs/final/`) → `src/10_scorecard_service.py` (Flask scorecard API) → `tools/build_report.py` (final report). Completed coder workbooks are in `coding/completed/`.
+
+## ACEG Governance Skill (industry solution)
+
+`skill/aceg-governance/` is a self-contained Agent Skill. Any LLM agent that can read instructions and run Python can load it to assess an advisory, CVE, or incident in an AI coding agent. It produces ACEG codes with evidence, the GCS, P(high impact), a P1/P2/P3 priority, and a remediation plan with an owner and a verification check for each item.
+
+```bash
+python skill/aceg-governance/scripts/mask_severity.py advisory.txt > masked.txt   # blinding
+python skill/aceg-governance/scripts/aceg_score.py skill/aceg-governance/assets/example_case.json --html card.html
+python skill/aceg-governance/scripts/aceg_score.py cases.csv --batch scored.csv    # portfolio mode
+```
+
+Validation on the 56 held-out cases, with the LLM doing all of the coding:
+- Fully automated AUC .81, against .84 with majority labels and .70 for CWE triage.
+- Share of each tier rated High or Critical: P1 90%, P2 74%, P3 31%.
+
+The skill uses the random forest when scikit-learn is available and otherwise falls back to a dependency-free logistic model (`assets/portable_model.json`). To rebuild the assets, run `src/11_build_skill_and_evaluate.py`.
+
 ## Data (public, frozen 11 October 2026)
 
 | File | Content |

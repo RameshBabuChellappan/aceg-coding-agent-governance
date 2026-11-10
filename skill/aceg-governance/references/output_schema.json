@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ACEG coded case",
+  "type": "object",
+  "required": ["case_id", "component_type", "year", "domains", "primary_domain", "breached_controls", "covered"],
+  "properties": {
+    "case_id": {"type": "string"},
+    "title": {"type": "string"},
+    "product": {"type": "string"},
+    "component_type": {"enum": ["agent product", "ecosystem"]},
+    "year": {"type": "integer"},
+    "cwe_ids": {"type": "string", "description": "Semicolon-separated, e.g. CWE-78;CWE-20"},
+    "domains": {"type": "array", "items": {"type": "integer", "minimum": 1, "maximum": 8}, "minItems": 1},
+    "primary_domain": {"type": "integer", "minimum": 1, "maximum": 8},
+    "breached_controls": {"type": "array", "items": {"type": "integer", "minimum": 1, "maximum": 20}},
+    "extension_controls": {"type": "array", "items": {"enum": [21, 22]}},
+    "covered": {"enum": [0, 1]},
+    "confidence": {"enum": ["high", "medium", "low"]},
+    "evidence": {"type": "object", "description": "Keys D1..D8 and covered_by; values are short quotes or control codes"}
+  }
+}
