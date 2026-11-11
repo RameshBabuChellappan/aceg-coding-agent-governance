@@ -1,0 +1,5 @@
+Pipeline,Labels,test_auc,auc_lo,auc_hi,bal_acc,f1,rec,spec,brier
+"Random forest (M7), hold-out model",Final (majority) labels,0.839,0.718,0.938,0.675,0.81,0.821,0.529,0.155
+"Random forest (M7), hold-out model",LLM coder only (fully automated),0.814,0.678,0.922,0.713,0.854,0.897,0.529,0.156
+"Portable logistic, training split",Final (majority) labels,0.802,0.67,0.912,0.546,0.826,0.974,0.118,0.169
+"Portable logistic, training split",LLM coder only (fully automated),0.81,0.673,0.912,0.546,0.826,0.974,0.118,0.176

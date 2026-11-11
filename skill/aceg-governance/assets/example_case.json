@@ -1,0 +1,20 @@
+{
+ "case_id": "CA-169",
+ "title": "Claude Code: Sandbox Escape via Git Worktree Path Confusion Allows Unsandboxed Code Execution",
+ "product": "Claude Code",
+ "component_type": "agent product",
+ "year": 2026,
+ "cwe_ids": "CWE-22;CWE-59;CWE-78",
+ "domains": [1, 2, 4, 6],
+ "primary_domain": 4,
+ "breached_controls": [3, 4, 8, 14],
+ "covered": 1,
+ "confidence": "high",
+ "evidence": {
+  "D1": "leading to code execution outside of seatbelt sandbox restrictions",
+  "D2": "navigation to worktrees outside the sandbox context",
+  "D4": "clone a malicious repository containing prompt injection content",
+  "D6": "git fsmonitor execution during worktree operations",
+  "covered_by": "C14"
+ }
+}

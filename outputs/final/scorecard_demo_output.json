@@ -1,0 +1,113 @@
+{
+ "case_id": "CA-169",
+ "gcs": 60.0,
+ "n_domains": 4,
+ "n_applicable": 10,
+ "n_breached": 4,
+ "domains": [
+  {
+   "code": "D1",
+   "name": "Agency and action control"
+  },
+  {
+   "code": "D2",
+   "name": "Instruction and boundary adherence"
+  },
+  {
+   "code": "D4",
+   "name": "Input trust and goal integrity"
+  },
+  {
+   "code": "D6",
+   "name": "Code and supply-chain integrity"
+  }
+ ],
+ "primary_domain": "D4",
+ "family": "B Input and code integrity",
+ "cwe_group": "Command injection",
+ "breached_controls": [
+  {
+   "code": "C03",
+   "name": "Execution isolation (sandbox; dev/prod separation)",
+   "crosswalk": "ASI05 / MANAGE"
+  },
+  {
+   "code": "C04",
+   "name": "Machine-enforced policy limits (deny rules, ignore files, allowlists)",
+   "crosswalk": "ASI10 / MANAGE"
+  },
+  {
+   "code": "C08",
+   "name": "Isolation and sanitization of untrusted inputs",
+   "crosswalk": "ASI01, ASI06 / MANAGE"
+  },
+  {
+   "code": "C14",
+   "name": "No auto-execution of untrusted workspace configuration",
+   "crosswalk": "ASI05 / MANAGE"
+  }
+ ],
+ "controls_held": [
+  "C01",
+  "C02",
+  "C05",
+  "C09",
+  "C12",
+  "C13"
+ ],
+ "p_high_impact": 0.865,
+ "risk_tier": "Priority 1: fix before agent use",
+ "model": "M7 Random forest: ACEG + CWE (training split only)",
+ "base_rate": 0.701
+}
+{
+ "case_id": "NEW-001",
+ "gcs": 57.1,
+ "n_domains": 3,
+ "n_applicable": 7,
+ "n_breached": 3,
+ "domains": [
+  {
+   "code": "D1",
+   "name": "Agency and action control"
+  },
+  {
+   "code": "D2",
+   "name": "Instruction and boundary adherence"
+  },
+  {
+   "code": "D4",
+   "name": "Input trust and goal integrity"
+  }
+ ],
+ "primary_domain": "D2",
+ "family": "A Agency and oversight",
+ "cwe_group": "Command injection",
+ "breached_controls": [
+  {
+   "code": "C02",
+   "name": "Human approval gate for sensitive or irreversible actions",
+   "crosswalk": "ASI02 / MANAGE"
+  },
+  {
+   "code": "C04",
+   "name": "Machine-enforced policy limits (deny rules, ignore files, allowlists)",
+   "crosswalk": "ASI10 / MANAGE"
+  },
+  {
+   "code": "C08",
+   "name": "Isolation and sanitization of untrusted inputs",
+   "crosswalk": "ASI01, ASI06 / MANAGE"
+  }
+ ],
+ "controls_held": [
+  "C01",
+  "C03",
+  "C05",
+  "C09"
+ ],
+ "p_high_impact": 0.912,
+ "risk_tier": "Priority 1: fix before agent use",
+ "model": "M7 Random forest: ACEG + CWE (training split only)",
+ "base_rate": 0.701
+}

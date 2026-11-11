@@ -1,0 +1,27 @@
+<!doctype html><html><head><meta charset='utf-8'><title>ACEG Scorecard</title><style>
+body{font-family:'DejaVu Sans',Arial,sans-serif;background:#f4f3ef;color:#0b0b0b;margin:0;padding:22px}
+.card{background:#fcfcfb;border:1px solid #e4e3df;border-radius:10px;padding:18px 22px;max-width:920px;margin:auto}
+h1{font-size:19px;margin:0 0 4px} .sub{color:#52514e;font-size:13px;margin-bottom:14px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:12px 0 16px}
+.kpi{border:1px solid #e4e3df;border-radius:8px;padding:10px 12px;background:white}
+.kpi .v{font-size:26px;font-weight:700} .kpi .l{font-size:12px;color:#52514e}
+.bar{height:8px;background:#e4e3df;border-radius:4px;margin-top:6px} .bar>div{height:8px;border-radius:4px;background:#eb6834}
+.chip{display:inline-block;border:1px solid #2a78d6;color:#1d5aa6;border-radius:12px;padding:2px 9px;margin:2px 4px 2px 0;font-size:12px}
+table{border-collapse:collapse;width:100%;font-size:13px;margin-top:6px} td,th{border-bottom:1px solid #e4e3df;padding:6px 6px;text-align:left}
+th{color:#52514e;font-weight:600;font-size:12px} .code{font-weight:700;color:#b5461b;width:52px} .muted{color:#52514e}
+.tier{display:inline-block;padding:3px 10px;border-radius:12px;background:#fde6dc;color:#9a3412;font-weight:700;font-size:13px}
+h2{font-size:14px;margin:14px 0 4px}
+</style></head><body><div class='card'>
+<h1>ACEG Governance Scorecard &middot; CA-169</h1>
+<div class='sub'>Claude Code &middot; Claude Code: Sandbox Escape via Git Worktree Path Confusion Allows Unsandboxed Code Execution</div>
+<div class='kpis'>
+<div class='kpi'><div class='l'>Governance Compliance Score</div><div class='v'>60%</div><div class='l'>6 of 10 applicable controls held</div></div>
+<div class='kpi'><div class='l'>Governance domains implicated</div><div class='v'>4</div><div class='l'>Primary D4 &middot; family B Input and code integrity</div></div>
+<div class='kpi'><div class='l'>Predicted P(high impact)</div><div class='v'>86%</div><div class='bar'><div style='width:86%'></div></div><div class='l'>Portfolio base rate 70%</div></div>
+<div class='kpi'><div class='l'>Triage tier</div><div class='v' style='font-size:16px;margin-top:6px'><span class='tier'>Priority 1: fix before agent use</span></div><div class='l'>CWE group: Command injection</div></div>
+</div>
+<h2>Domains present</h2><div><span class='chip'>D1 Agency and action control</span> <span class='chip'>D2 Instruction and boundary adherence</span> <span class='chip'>D4 Input trust and goal integrity</span> <span class='chip'>D6 Code and supply-chain integrity</span></div>
+<h2>Breached controls to remediate (OWASP Agentic Top 10 / NIST AI RMF function)</h2>
+<table><tr><th>Control</th><th>Requirement</th><th>Crosswalk</th></tr><tr><td class='code'>C03</td><td>Execution isolation (sandbox; dev/prod separation)</td><td class='muted'>ASI05 / MANAGE</td></tr><tr><td class='code'>C04</td><td>Machine-enforced policy limits (deny rules, ignore files, allowlists)</td><td class='muted'>ASI10 / MANAGE</td></tr><tr><td class='code'>C08</td><td>Isolation and sanitization of untrusted inputs</td><td class='muted'>ASI01, ASI06 / MANAGE</td></tr><tr><td class='code'>C14</td><td>No auto-execution of untrusted workspace configuration</td><td class='muted'>ASI05 / MANAGE</td></tr></table>
+<div class='sub' style='margin-top:12px'>Controls held: C01, C02, C05, C09, C12, C13 &middot; Model: M7 Random forest: ACEG + CWE (training split only)</div>
+</div></body></html>

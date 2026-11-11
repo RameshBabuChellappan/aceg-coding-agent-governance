@@ -1,0 +1,9 @@
+cwe_group,count,mean
+Command injection,59,0.881
+Path traversal / link following,33,0.545
+Untrusted input / prompt injection,30,0.533
+Access control / authentication,30,0.733
+Untrusted configuration / inclusion,28,0.679
+Code injection,22,1.0
+Information exposure,17,0.294
+Other,4,0.5
